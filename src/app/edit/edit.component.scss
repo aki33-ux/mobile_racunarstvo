@@ -1,0 +1,36 @@
+.block {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  ion-content{
+    --background: #4488bf;
+  }
+  
+  ion-modal {
+    --height: auto;
+  }
+  ion-input{
+    --background:#e7c04d;
+    --padding-start:33px;
+    height: 55px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    --placeholder-color:#ffffff;
+    --color: #fff;
+  }
+  ion-select{
+    color: #000000;
+  }
+  ion-text-area{
+    --background-color:#e7c04d;
+    --padding-start:33px;
+    height: 55px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    --placeholder-color:#ffffff;
+    --color: #fff;
+  }
+ 

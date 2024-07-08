@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title>
+          Edit Recomendation
+      </ion-title>
+      <ion-buttons slot="end">
+          <ion-button (click)="cancel()">Cancel</ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onEdit()">
+      <ion-grid>
+          <ion-row>
+              <ion-col>
+                  <ion-input type="text" fill="outline" placeholder={{rec.brand}}  ngModel={{rec.brand}} name="brand"></ion-input>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <ion-input type="text" fill="outline" placeholder={{rec.laptop}} ngModel={{rec.laptop}} name="laptop"></ion-input>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              
+              <ion-col >
+                  <ion-list >
+                      <ion-item>
+                        <ion-select interface="popover" placeholder={{rec.laptop_size}} ngModel={{rec.laptop_size}} name="laptop_size">
+                            <ion-select-option value="13in">13in</ion-select-option>
+                            <ion-select-option value="15in">15in</ion-select-option>
+                            <ion-select-option value="17in">17in</ion-select-option>
+                            <ion-select-option value="12in">12in</ion-select-option>
+                            <ion-select-option value="14in">14in</ion-select-option>
+                        </ion-select>
+                      </ion-item>
+                    </ion-list>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <ion-input type="text" fill="outline" placeholder={{rec.comment}} ngModel={{rec.comment}} name="comment"></ion-input>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+      <ion-button type="submit" color="warning" expand="block" [disabled]="f.invalid">Edit it</ion-button>
+  </form>
+ 
+</ion-content>
+
+

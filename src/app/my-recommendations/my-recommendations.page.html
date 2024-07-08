@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  <ion-buttons slot="end">
+    <ion-menu-button>
+    </ion-menu-button>
+  </ion-buttons>
+    <ion-title>My Reccomendations</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-list>
+    
+    <ion-card *ngFor="let recomend of recomends">
+     
+      <ion-card-header>
+        <ion-card-title>
+              <ion-col>{{recomend.laptop}} - {{recomend.brand}} ({{recomend.laptop_size}})</ion-col> 
+        </ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{recomend.comment}}
+      </ion-card-content>
+      
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col></ion-col> 
+      <ion-col></ion-col> 
+      <ion-col></ion-col> 
+      <ion-button  (click)="openEdit(recomend)" color="light"><ion-icon name="pencil-outline"></ion-icon></ion-button>
+      <ion-button  (click)="deleteRec(recomend)"color="danger"><ion-icon name="trash-outline"></ion-icon></ion-button>
+  
+    </ion-row>
+     
+    
+    </ion-card>
+  
+  </ion-list>
+  
+  </ion-content>
+
+
+<ion-item>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button routerLink="/recommendations">
+        <ion-icon name="planet" aria-hidden="true"></ion-icon>
+        <ion-label>Recommendations</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button routerLink="/stared">
+        <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+        <ion-label>Stared Recommendation</ion-label>
+      </ion-tab-button>
+      <ion-tab-button>
+        <ion-fab-button (click)="openForm()" size="small" color="medium"><ion-icon name="add-sharp"></ion-icon></ion-fab-button>
+
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-item>
